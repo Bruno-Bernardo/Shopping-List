@@ -1,0 +1,37 @@
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+  <div style="padding: 13px;">
+    <mat-card style="margin-top:10px;">
+      <mat-card-header>
+        <mat-card-title>Add</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text"
+                 [autofocus]
+                 class="form-control"
+                 id="name"
+                 required
+                 [(ngModel)]="item.name"
+                 name="name"
+                 formControlName="name">
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input type="number"
+                 class="form-control"
+                 id="quantity"
+                 formControlName="quantity"
+                 [(ngModel)]="item.quantity"
+                 name="quantity">
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button type="submit" mat-raised-button color="success">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</form>

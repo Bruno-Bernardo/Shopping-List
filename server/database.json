@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "name": "Potato",
+      "quantity": 1,
+      "date": "2020-08-14T18:03:13.994Z",
+      "purchased": true,
+      "brands": [
+        {
+          "name": "test",
+          "selected": false
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Milk",
+      "quantity": 1,
+      "date": "2020-08-15T05:26:13.886Z",
+      "purchased": false,
+      "brands": [
+        {
+          "name": "test",
+          "selected": false
+        }
+      ],
+      "id": 2
+    }
+  ]
+}

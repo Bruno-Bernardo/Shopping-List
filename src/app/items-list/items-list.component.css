@@ -1,0 +1,21 @@
+.mat-success {
+  width: 100%;
+  background-color: green;
+  color: #fff;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-raised-button {
+  min-width: 125px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+mat-icon {
+  cursor: pointer;
+}

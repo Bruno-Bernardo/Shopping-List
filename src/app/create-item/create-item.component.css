@@ -1,0 +1,22 @@
+.mat-success {
+  width: 100%;
+  background-color: green;
+  color: #fff;
+}
+
+.example-form {
+  min-width: 150px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.no-style .ng-valid {
+  border-left: 1px  solid #CCC
+}
+
+.no-style .ng-invalid {
+  border-left: 1px  solid #CCC
+}

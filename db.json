@@ -2,15 +2,10 @@
   "items": [
     {
       "name": "Potato",
-      "quantity": 1,
+      "quantity": 6,
       "date": "2020-08-14T18:03:13.994Z",
       "purchased": true,
-      "brands": [
-        {
-          "name": "test",
-          "selected": false
-        }
-      ],
+      "brands": [],
       "id": 1
     },
     {
@@ -20,33 +15,28 @@
       "purchased": false,
       "brands": [
         {
-          "name": "test",
+          "name": "MilkyBrand",
           "selected": false
         }
       ],
       "id": 2
     },
     {
-      "name": "Leite",
-      "quantity": 1,
+      "name": "Onion",
+      "quantity": 3,
       "date": "2020-08-15T05:40:39.599Z",
       "purchased": false,
-      "brands": [
-        {
-          "name": "test",
-          "selected": false
-        }
-      ],
+      "brands": [],
       "id": 3
     },
     {
-      "name": "teste",
-      "quantity": 1,
+      "name": "Flour",
+      "quantity": 2,
       "date": "2020-08-15T05:43:00.882Z",
       "purchased": false,
       "brands": [
         {
-          "name": "test",
+          "name": "FlouryBrand",
           "selected": false
         }
       ],

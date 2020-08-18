@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const SERVER_URL = 'http://192.168.0.19:8080/items';
+const SERVER_URL = 'https://my-json-server.typicode.com/Bruno-Bernardo/Shopping-List/items';
 
 @Injectable({
   providedIn: 'root'

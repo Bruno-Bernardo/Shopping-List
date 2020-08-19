@@ -7,13 +7,13 @@ export class Tab {
   label: string;
   items: [];
 
-  constructor(private apiService: ApiService, label: string) {
+  constructor(private apiService: ApiService, label: string, private itemsMethod: any) {
     this.label = label;
     this.loadItems();
   }
 
   loadItems(): void {
-    this.apiService.getAll()
+    this.itemsMethod
       .subscribe(
         data => {
           this.items = data;
@@ -37,10 +37,11 @@ export class ItemsListComponent implements OnInit {
   asyncTabs: Observable<Tab[]>;
   displayedColumns: string[] = ['name', 'quantity', 'actions', 'remove'];
   @ViewChild(MatSort, {static: true}) sort: MatSort;
+
   constructor(private apiService: ApiService) {
     this.tabs = [
-      new Tab(apiService, 'Week'),
-      new Tab(apiService, 'All')
+      new Tab(apiService, 'Week', this.apiService.getAllByWeek(new Date())),
+      new Tab(apiService, 'All', this.apiService.getAll())
     ];
   }
 
@@ -51,7 +52,7 @@ export class ItemsListComponent implements OnInit {
   loadItems(): void {
     this.items = this.retrieveItems();
     this.itemsWeek = this.retrieveItems();
-    this.tabs.forEach( tab => tab.loadItems());
+    this.tabs.forEach(tab => tab.loadItems());
   }
 
   retrieveItems(): any {
@@ -91,17 +92,7 @@ export class ItemsListComponent implements OnInit {
     );
   }
 
-  getFirstDayOfTheWeek(date): any {
-    const otherDate = new Date(date);
-    otherDate.setHours(0);
-    otherDate.setSeconds(0);
-    otherDate.setMinutes(0);
-    const day = otherDate.getDay();
-    const diff = otherDate.getDate() - day + (day === 0 ? -6 : 1); // adjust when day is sunday
-    return new Date(otherDate.setDate(diff));
-  }
-
-  getLastDayOfTheWeek(date): any {
-    return new Date(date).setDate(this.getFirstDayOfTheWeek(date).getDate() + 7);
+  brandsNames(item): any {
+    return item.brands.map(b => b.name).join(',');
   }
 }

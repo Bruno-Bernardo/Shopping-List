@@ -12,7 +12,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
-    return this.http.get(SERVER_URL);
+    return this.http.get(`${SERVER_URL}?_sort=purchased,name&_order=asc,asc`);
   }
 
   get(id): Observable<any> {
@@ -31,11 +31,25 @@ export class ApiService {
     return this.http.delete(`${SERVER_URL}/${id}`);
   }
 
-  deleteAll(): Observable<any> {
-    return this.http.delete(SERVER_URL);
+  getAllByWeek(date): Observable<any> {
+    const dataStart = this.getFirstDayOfTheWeek(date).toISOString();
+    const dataEnd = this.getLastDayOfTheWeek(date).toISOString();
+    return this.http.get(`${SERVER_URL}?date_gte=${dataStart}&date_lte=${dataEnd}&_sort=purchased,name&_order=asc,asc`);
   }
 
-  findByName(name): Observable<any> {
-    return this.http.get(`${SERVER_URL}?name=${name}`);
+  getFirstDayOfTheWeek(date): any {
+    const otherDate = new Date(date);
+    otherDate.setHours(0);
+    otherDate.setSeconds(0);
+    otherDate.setMinutes(0);
+    const day = otherDate.getDay();
+    const diff = otherDate.getDate() - day;
+    return new Date(otherDate.setDate(diff));
+  }
+
+  getLastDayOfTheWeek(date): any {
+    const lastDay = new Date();
+    lastDay.setDate(this.getFirstDayOfTheWeek(date).getDate() + 7)
+    return lastDay;
   }
 }

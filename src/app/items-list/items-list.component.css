@@ -19,3 +19,12 @@ table {
 mat-icon {
   cursor: pointer;
 }
+
+.no-margin {
+  margin: 0px;
+}
+
+.brands {
+  color: #6a6a6a;
+  font-size: 12px;
+}

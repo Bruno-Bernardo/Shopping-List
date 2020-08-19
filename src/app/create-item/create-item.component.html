@@ -9,7 +9,7 @@
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text"
-                 [autofocus]
+                 autofocus
                  class="form-control"
                  id="name"
                  required
@@ -27,6 +27,18 @@
                  [(ngModel)]="item.quantity"
                  name="quantity">
         </div>
+
+        <div class="form-group">
+          <label for="name">Brands</label>
+          <input type="text"
+                 class="form-control"
+                 id="brand"
+                 name="brand"
+                 (keypress)="addBrand($event)"
+                 [(ngModel)]="newBrand"
+                 formControlName="brand">
+        </div>
+        <p *ngFor="let brand of item.brands">{{brand.name}}</p>
       </mat-card-content>
 
       <mat-card-actions>

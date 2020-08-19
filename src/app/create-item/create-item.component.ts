@@ -18,15 +18,17 @@ export class CreateItemComponent implements OnInit {
     quantity: 1,
     date: null,
     purchased: false,
-    brands: [{name: 'test', selected: false}]
+    brands: []
   };
   submitted = false;
   newBrand = '';
 
-  addBrand(): void {
-    const data = {name: this.newBrand, selected: false};
-    this.item.brands.push(data);
-    this.newBrand = '';
+  addBrand(event: KeyboardEvent): void {
+    if (event.key === ' ') {
+      const data = {name: this.newBrand, selected: false};
+      this.item.brands.push(data);
+      this.newBrand = '';
+    }
   }
 
   constructor(private fb: FormBuilder, private apiService: ApiService, private router: Router) { }

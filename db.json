@@ -4,7 +4,7 @@
       "name": "Potato",
       "quantity": 6,
       "date": "2020-08-14T18:03:13.994Z",
-      "purchased": true,
+      "purchased": false,
       "brands": [],
       "id": 1
     },
@@ -41,6 +41,45 @@
         }
       ],
       "id": 4
+    },
+    {
+      "name": "Candy",
+      "quantity": 2,
+      "date": "2020-08-18T05:43:00.882Z",
+      "purchased": true,
+      "brands": [
+        {
+          "name": "Willy Wonka",
+          "selected": false
+        }
+      ],
+      "id": 5
+    },
+    {
+      "name": "Banana",
+      "quantity": 4,
+      "date": "2020-08-19T00:54:21.134Z",
+      "purchased": false,
+      "brands": [
+        {
+          "name": "test",
+          "selected": false
+        }
+      ],
+      "id": 6
+    },
+    {
+      "name": "Cheese",
+      "quantity": 1,
+      "date": "2020-08-19T00:55:43.032Z",
+      "purchased": true,
+      "brands": [
+        {
+          "name": "test",
+          "selected": false
+        }
+      ],
+      "id": 7
     }
   ]
 }
